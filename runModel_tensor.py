@@ -65,12 +65,13 @@ if __name__ == '__main__':
     # Spark DataFrame. If not, it will return a Pandas DataFrame.
     df = package.run('clickStreamPrep.dprep', dataflow_idx=0)
     print("Data loaded")
-    data = df
-    valid = df
-    #data, valid = train_test_split(df, test_size=0.3, shuffle=False)
+    #data = df
+    #valid = df
+    data, valid = train_test_split(df, test_size=0.3, shuffle=False)
     args = Args()
     #Where is n_items set/used etc?
-    args.n_items = len(data['ItemId'].unique())
+    itemIds = df['ItemId'].unique()
+    args.n_items = len(itemIds)
     args.layers = command_line.layer
     args.rnn_size = command_line.size
     args.n_epochs = command_line.epoch
@@ -90,10 +91,10 @@ if __name__ == '__main__':
         #oSaver = tf.train.Saver()
         gru = model.GRU4Rec(sess, args)
         if args.is_training:
-            gru.fit(data)
+            gru.fit(data, args.n_items, itemIds)
             #oSaver.save(sess, './outputs/model.cktp')
         else:
             #oSaver.restore(sess, './outputs/model.cktp')
-            res = evaluation.evaluate_sessions_batch(gru, data, valid)
+            res = evaluation.evaluate_sessions_batch(gru, data, valid, itemIds)
             print('Recall@20: {}\tMRR@20: {}'.format(res[0], res[1]))
         

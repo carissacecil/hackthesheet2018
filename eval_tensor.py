@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 
 
-def evaluate_sessions_batch(model, train_data, test_data, cut_off=20, batch_size=50, session_key='SessionId', item_key='ItemId', time_key='Time'):
+def evaluate_sessions_batch(model, train_data, test_data, itemids, cut_off=20, batch_size=50, session_key='SessionId', item_key='ItemId', time_key='Time'):
     
     '''
     Evaluates the GRU4Rec network wrt. recommendation accuracy measured by recall@N and MRR@N.
@@ -36,7 +36,6 @@ def evaluate_sessions_batch(model, train_data, test_data, cut_off=20, batch_size
     '''
     model.predict = False
     # Build itemidmap from train data.
-    itemids = train_data[item_key].unique()
     itemidmap = pd.Series(data=np.arange(len(itemids)), index=itemids)
     
     test_data.sort_values([session_key, time_key], inplace=True)

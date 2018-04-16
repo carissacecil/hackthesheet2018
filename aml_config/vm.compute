@@ -2,6 +2,6 @@ type: remotedocker
 baseDockerImage: 'microsoft/mmlspark:plus-0.9.9'
 sharedVolumes: true
 nativeSharedDirectory: ~/.azureml/share/
-address: 52.229.57.44
+address: 40.65.121.150
 username: ccecil
 password: AzureMlSecret=34460902-c4e2-74b2-d440-9dbd8f9373c2

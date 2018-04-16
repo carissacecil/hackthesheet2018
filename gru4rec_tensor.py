@@ -172,10 +172,10 @@ class GRU4Rec:
         offset_sessions[1:] = data.groupby(self.session_key).size().cumsum()
         return offset_sessions
     
-    def fit(self, data):
+    def fit(self, data, n_items, itemids):
         self.error_during_train = False
-        itemids = data[self.item_key].unique()
-        self.n_items = len(itemids)
+
+        self.n_items = n_items
         self.itemidmap = pd.Series(data=np.arange(self.n_items), index=itemids)
         data = pd.merge(data, pd.DataFrame({self.item_key:itemids, 'ItemIdx':self.itemidmap[itemids].values}), on=self.item_key, how='inner')
         offset_sessions = self.init(data)

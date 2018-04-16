@@ -88,13 +88,13 @@
               {
                 "sampleId": "1a9a93f1-33a3-4026-8469-e449464c2258",
                 "sampleRevision": "946346f1-9fdc-4ec5-b4cf-85638e3e51e4",
-                "sampleName": "Top 100000",
+                "sampleName": "Full File",
                 "sampleRunner": {
                   "id": null,
                   "type": 0
                 },
                 "remoteGeneratorProperties": {},
-                "sampleStrategy": 0,
+                "sampleStrategy": 3,
                 "topArguments": {
                   "sampleCount": 100000
                 },
