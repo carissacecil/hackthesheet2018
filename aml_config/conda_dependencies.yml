@@ -20,9 +20,13 @@ dependencies:
   # The python interpreter version.
   # Currently Azure ML Workbench only supports 3.5.2.
   - python=3.5.2
-
+  #- theano
   # Required for Jupyter Notebooks.
   - ipykernel=4.6.1
+  - scikit-learn
+  - pandas
+  - numpy=1.12.1
+  - tensorflow
 
   - pip:
     # Required packages for AzureML execution, history, and data preparation.

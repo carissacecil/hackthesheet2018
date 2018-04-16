@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 40,
+  "id": "eca209c4-a1ca-42a3-88f1-1424470681ce",
+  "activities": [
+    {
+      "id": "84fb5af9-7593-470b-a7ca-5e46507311ff",
+      "name": "untitled folder",
+      "blocks": [
+        {
+          "id": "569ebf6d-ac47-42bf-b075-d57fd2e4b9f6",
+          "type": "Microsoft.DPrep.DataSourceBlock",
+          "arguments": {
+            "path": {
+              "target": 1,
+              "resourceDetails": [
+                {
+                  "path": "https://smartsheetexperimstorage.blob.core.windows.net/clickstream/clickEventsFromSessionsWithoutRuleCreation.csv",
+                  "sas": {
+                    "id": "https://smartsheetexperimstorage.blob.core.windows.net/clickstream/clickEventsFromSessionsWithoutRuleCreation.csv",
+                    "secretType": "AzureMLSecret"
+                  },
+                  "storageAccountName": "smartsheetexperimstorage",
+                  "storageAccountKey": {
+                    "id": "smartsheetexperimstorage",
+                    "secretType": "AzureMLSecret"
+                  }
+                },
+                {
+                  "path": "https://smartsheetexperimstorage.blob.core.windows.net/clickstream/clickEventsFromSessionsWithRuleCreation.csv",
+                  "sas": {
+                    "id": "https://smartsheetexperimstorage.blob.core.windows.net/clickstream/clickEventsFromSessionsWithRuleCreation.csv",
+                    "secretType": "AzureMLSecret"
+                  },
+                  "storageAccountName": "smartsheetexperimstorage",
+                  "storageAccountKey": {
+                    "id": "smartsheetexperimstorage",
+                    "secretType": "AzureMLSecret"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "a5f50b96-6b1d-4675-a192-df34ede9c9bb",
+          "type": "Microsoft.DPrep.ParseDelimitedBlock",
+          "arguments": {
+            "preview": false,
+            "columnHeadersMode": 1,
+            "separator": ",",
+            "fileEncoding": 0,
+            "skipRowsMode": 0,
+            "handleQuotedLineBreaks": false
+          }
+        },
+        {
+          "id": "3ee67970-a775-4d46-9c13-57fc074400b2",
+          "type": "Microsoft.DPrep.SetColumnTypesBlock",
+          "arguments": {
+            "columnConversion": [
+              {
+                "columnId": "user_id",
+                "typeProperty": 3,
+                "typeArguments": {}
+              },
+              {
+                "columnId": "user_session_log_id",
+                "typeProperty": 3,
+                "typeArguments": {}
+              },
+              {
+                "columnId": "client_event_timestamp",
+                "typeProperty": 4,
+                "typeArguments": {
+                  "dateTimeFormats": [
+                    "%Y-%m-%dT%H:%M:%S.%f%z"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "15a7e955-4b8c-47f2-aba2-038edc02f1d2",
+          "type": "Microsoft.DPrep.SampleBlock",
+          "arguments": {
+            "samples": [
+              {
+                "sampleId": "1a9a93f1-33a3-4026-8469-e449464c2258",
+                "sampleRevision": "946346f1-9fdc-4ec5-b4cf-85638e3e51e4",
+                "sampleName": "Top 100000",
+                "sampleRunner": {
+                  "id": null,
+                  "type": 0
+                },
+                "remoteGeneratorProperties": {},
+                "sampleStrategy": 0,
+                "topArguments": {
+                  "sampleCount": 100000
+                },
+                "randomNArguments": {
+                  "sampleCount": 10000
+                },
+                "randomPercentArguments": {
+                  "probability": 0.1
+                },
+                "allowAutoGen": true,
+                "isDisabled": false
+              }
+            ],
+            "activeSample": "1a9a93f1-33a3-4026-8469-e449464c2258"
+          }
+        },
+        {
+          "id": "f1614f37-2a43-4825-a173-c5350b1baad4",
+          "type": "Microsoft.DPrep.HandlePathColumnBlock",
+          "arguments": {
+            "pathColumnOperation": 1
+          }
+        }
+      ],
+      "inspectors": [
+        {
+          "id": "14c35860-e1ac-4c8d-a281-7061e697b066",
+          "type": "Microsoft.DPrep.DataQualityInspector",
+          "arguments": {},
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "84fb5af9-7593-470b-a7ca-5e46507311ff",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 1,
+              "referencedStepId": null,
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": false
+        }
+      ]
+    }
+  ],
+  "runConfigurations": []
+}

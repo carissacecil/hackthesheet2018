@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 40,
+  "id": "7a1ede1d-94cf-438e-b675-fdc2bef2e96f",
+  "activities": [
+    {
+      "id": "fdce4f65-afb3-41ac-952a-bf667d11ea33",
+      "name": "clickEventsFromSessionsWithoutRuleCreation",
+      "blocks": [
+        {
+          "id": "586cb305-1324-47bd-98b8-2813fbbd6e30",
+          "type": "Microsoft.DPrep.ReferenceActivityBlock",
+          "arguments": {
+            "reference": {
+              "referenceType": 1,
+              "referenceContainerPath": "./clickEventsFromSessionsWithoutRuleCreation.dsource",
+              "referencedActivityId": "0b2845e7-9308-4006-9405-a6120a964f25",
+              "referencedBranchId": null,
+              "referencedStep": null,
+              "anonymousSteps": null
+            }
+          }
+        },
+        {
+          "id": "cc66b730-7e75-4617-bc26-1c6c1bc0ddd7",
+          "type": "Microsoft.DPrep.AddCustomColumnBlock",
+          "arguments": {
+            "columnId": "label",
+            "priorColumnId": "client_event_timestamp",
+            "customExpression": "1",
+            "codeBlockType": 0
+          }
+        }
+      ],
+      "inspectors": [
+        {
+          "id": "1b40139c-17c8-48bc-9401-f41ef15c1d8a",
+          "type": "Microsoft.DPrep.DataQualityInspector",
+          "arguments": {},
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "fdce4f65-afb3-41ac-952a-bf667d11ea33",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 1,
+              "referencedStepId": null,
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": false
+        }
+      ]
+    }
+  ],
+  "runConfigurations": []
+}

@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 40,
+  "id": "3f8d78d4-8cc5-4b8d-806f-1fff7e186480",
+  "activities": [
+    {
+      "id": "9554d5d7-b369-4d46-a5ef-ed3aaa8e7bae",
+      "name": "clickEventsFromSessionsWithoutRuleCreation",
+      "blocks": [
+        {
+          "id": "6023caa6-31c8-4693-a256-b4246dfe56d9",
+          "type": "Microsoft.DPrep.ReferenceActivityBlock",
+          "arguments": {
+            "reference": {
+              "referenceType": 1,
+              "referenceContainerPath": "./clickEventsFromSessionsWithoutRuleCreation.dsource",
+              "referencedActivityId": "0b2845e7-9308-4006-9405-a6120a964f25",
+              "referencedBranchId": null,
+              "referencedStep": null,
+              "anonymousSteps": null
+            }
+          }
+        },
+        {
+          "id": "2b5c4097-bff3-406d-92bd-f9056d4ae112",
+          "type": "Microsoft.DPrep.AddCustomColumnBlock",
+          "arguments": {
+            "columnId": "label",
+            "priorColumnId": "client_event_timestamp",
+            "customExpression": "0",
+            "codeBlockType": 0
+          }
+        },
+        {
+          "id": "0d9dfcb8-663b-4a37-b6b2-0604ddd55e34",
+          "type": "Microsoft.DPrep.AddCustomColumnBlock",
+          "arguments": {
+            "columnId": "client_events",
+            "priorColumnId": "client_event_parm1_string",
+            "customExpression": "def newvalue(row):\n    dict = ['btn_ok', 'btn_close', 'btn_attachment_attachfrom', '102', 'btn_apply', 'btn_cancel', 'btn_comment_post', 'imgDesktopMagnify', 'btn_save', 'btn_findReplace_find_next']\n    if row.client_event_parm1_string in dict:\n        return row.client_event_object_name + \":\" + row.client_event_parm1_string;\n    else:\n        return row.client_event_object_name\n",
+            "codeBlockType": 1
+          }
+        },
+        {
+          "id": "33913086-c206-4997-a6ef-db837622d000",
+          "type": "Microsoft.DPrep.CustomBlock",
+          "arguments": {
+            "customBlock": "def transform(df):\n    ohe = pd.get_dummies(df['client_events'], prefix = 'client_event_')\n    df = df.join(ohe)\n    return df",
+            "codeBlockType": 1
+          }
+        },
+        {
+          "id": "5dd96983-0d0a-498f-a0ab-d5bcbc086cbc",
+          "type": "Microsoft.DPrep.DeleteColumnBlock",
+          "arguments": {
+            "columnIds": [
+              "client_event_object_name"
+            ]
+          }
+        },
+        {
+          "id": "9aedc22b-7ed7-4896-8115-d6b3ea1509b0",
+          "type": "Microsoft.DPrep.DeleteColumnBlock",
+          "arguments": {
+            "columnIds": [
+              "client_event_parm1_string"
+            ]
+          }
+        },
+        {
+          "id": "e8260bf4-f276-4193-9950-c12822dd7764",
+          "type": "Microsoft.DPrep.DeleteColumnBlock",
+          "arguments": {
+            "columnIds": [
+              "user_account_type"
+            ]
+          }
+        },
+        {
+          "id": "67c0860c-daf9-4c57-a480-29e810dc6a55",
+          "type": "Microsoft.DPrep.DeleteColumnBlock",
+          "arguments": {
+            "columnIds": [
+              "user_data_source"
+            ]
+          }
+        }
+      ],
+      "inspectors": [
+        {
+          "id": "f973a453-fe26-4644-87a5-8832ee082e48",
+          "type": "Microsoft.DPrep.DataQualityInspector",
+          "arguments": {},
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "9554d5d7-b369-4d46-a5ef-ed3aaa8e7bae",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 1,
+              "referencedStepId": null,
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": false
+        },
+        {
+          "id": "7ee876e8-e0bb-45cc-9fb3-093956b6d9c3",
+          "type": "Microsoft.DPrep.ColumnStatsInspector",
+          "arguments": {
+            "columnId": "client_events"
+          },
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "9554d5d7-b369-4d46-a5ef-ed3aaa8e7bae",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 1,
+              "referencedStepId": null,
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": true
+        }
+      ]
+    }
+  ],
+  "runConfigurations": []
+}

@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 40,
+  "id": "40111ba1-8954-4857-942a-aac390d7ed63",
+  "activities": [
+    {
+      "id": "f9b5ffd3-d89e-468d-ad60-d5ef53e446a4",
+      "name": "clickEventsFromSessionsWithRuleCreation",
+      "blocks": [
+        {
+          "id": "7ddc194c-eb2b-415d-afc2-e5912ec4f832",
+          "type": "Microsoft.DPrep.DataSourceBlock",
+          "arguments": {
+            "path": {
+              "target": 0,
+              "resourceDetails": [
+                {
+                  "path": "/Users/ccecil/Downloads/clickstream_data (1)/clickEventsFromSessionsWithRuleCreation.csv"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "e4c6c395-e7b9-40f9-ada3-a4b6a1d89d33",
+          "type": "Microsoft.DPrep.ParseDelimitedBlock",
+          "arguments": {
+            "preview": false,
+            "columnHeadersMode": 1,
+            "separator": ",",
+            "fileEncoding": 0,
+            "skipRowsMode": 0,
+            "handleQuotedLineBreaks": false
+          }
+        },
+        {
+          "id": "5dba80bd-9116-4751-a1b0-0a87ec7ccfd4",
+          "type": "Microsoft.DPrep.SetColumnTypesBlock",
+          "arguments": {
+            "columnConversion": [
+              {
+                "columnId": "user_id",
+                "typeProperty": 3,
+                "typeArguments": {}
+              },
+              {
+                "columnId": "user_session_log_id",
+                "typeProperty": 3,
+                "typeArguments": {}
+              },
+              {
+                "columnId": "client_event_timestamp",
+                "typeProperty": 4,
+                "typeArguments": {
+                  "dateTimeFormats": [
+                    "%Y-%m-%dT%H:%M:%S.%f%z"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "86dabdd4-f562-47ca-85dc-dc7efd0b8d28",
+          "type": "Microsoft.DPrep.SampleBlock",
+          "arguments": {
+            "samples": [
+              {
+                "sampleId": "c5c06c6a-0dbf-4a31-a4f0-5a6d8002a354",
+                "sampleRevision": "7fd688e5-53ed-4c96-b849-39760930d1a9",
+                "sampleName": "Top 10000",
+                "sampleRunner": {
+                  "id": null,
+                  "type": 0
+                },
+                "remoteGeneratorProperties": {},
+                "sampleStrategy": 0,
+                "topArguments": {
+                  "sampleCount": 10000
+                },
+                "randomNArguments": {
+                  "sampleCount": 10000
+                },
+                "randomPercentArguments": {
+                  "probability": 0.1
+                },
+                "allowAutoGen": true,
+                "isDisabled": false
+              }
+            ],
+            "activeSample": "c5c06c6a-0dbf-4a31-a4f0-5a6d8002a354"
+          }
+        },
+        {
+          "id": "6bbcb5f6-22ad-4dd4-9811-656a0853fc2d",
+          "type": "Microsoft.DPrep.HandlePathColumnBlock",
+          "arguments": {
+            "pathColumnOperation": 0
+          }
+        }
+      ],
+      "inspectors": [
+        {
+          "id": "3c9d7594-88c6-4386-b4dc-dbc7edf80f57",
+          "type": "Microsoft.DPrep.DataQualityInspector",
+          "arguments": {},
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "f9b5ffd3-d89e-468d-ad60-d5ef53e446a4",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 1,
+              "referencedStepId": null,
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": false
+        }
+      ]
+    }
+  ],
+  "runConfigurations": []
+}

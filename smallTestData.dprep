@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 40,
+  "id": "13c721b3-399d-46a8-a069-dd9ef57876c2",
+  "activities": [
+    {
+      "id": "45efc863-ae28-411b-b4db-57f607b11b99",
+      "name": "testdata",
+      "blocks": [
+        {
+          "id": "1ee307a8-0430-43f1-af37-232e2f2bce06",
+          "type": "Microsoft.DPrep.ReferenceActivityBlock",
+          "arguments": {
+            "reference": {
+              "referenceType": 1,
+              "referenceContainerPath": "./testdata.dsource",
+              "referencedActivityId": "39f53512-90fb-4068-9e73-34f308e71358",
+              "referencedBranchId": null,
+              "referencedStep": null,
+              "anonymousSteps": null
+            }
+          }
+        }
+      ],
+      "inspectors": [
+        {
+          "id": "21d631bb-7ef4-48b6-ace5-1413e8ad5469",
+          "type": "Microsoft.DPrep.DataQualityInspector",
+          "arguments": {},
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "45efc863-ae28-411b-b4db-57f607b11b99",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 1,
+              "referencedStepId": null,
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": false
+        }
+      ]
+    }
+  ],
+  "runConfigurations": []
+}

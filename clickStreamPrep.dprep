@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 40,
+  "id": "fc7372c8-c831-486e-bc6e-ebf47f8ba4a2",
+  "activities": [
+    {
+      "id": "d7e0fd44-23a2-4c63-824d-ff30a8205aa0",
+      "name": "untitled folder",
+      "blocks": [
+        {
+          "id": "0270b756-5dbd-4beb-b622-a8a316d4ed55",
+          "type": "Microsoft.DPrep.ReferenceActivityBlock",
+          "arguments": {
+            "reference": {
+              "referenceType": 1,
+              "referenceContainerPath": "./untitled folder.dsource",
+              "referencedActivityId": "84fb5af9-7593-470b-a7ca-5e46507311ff",
+              "referencedBranchId": null,
+              "referencedStep": null,
+              "anonymousSteps": null
+            }
+          }
+        },
+        {
+          "id": "5426933e-db02-4706-9e2d-ca33d6554ec1",
+          "type": "Microsoft.DPrep.DeriveColumnByExample",
+          "arguments": {
+            "columnId": "Column",
+            "dsl": "PABOAG8AbgB0AGUAcgBtAGkAbgBhAGwATgBvAGQAZQAgAHMAeQBtAGIAbwBsAD0AIgBzAHcAaQB0AGMAaAAiACAAcgB1AGwAZQA9ACIAUwBpAG4AZwBsAGUAQgByAGEAbgBjAGgAIgA+ADwATgBvAG4AdABlAHIAbQBpAG4AYQBsAE4AbwBkAGUAIABzAHkAbQBiAG8AbAA9ACIAcwB0ACIAIAByAHUAbABlAD0AIgBUAHIAYQBuAHMAZgBvAHIAbQBhAHQAaQBvAG4AIgA+ADwATgBvAG4AdABlAHIAbQBpAG4AYQBsAE4AbwBkAGUAIABzAHkAbQBiAG8AbAA9ACIAZQAiACAAcgB1AGwAZQA9ACIAQQB0AG8AbQAiAD4APABMAGUAdABOAG8AZABlACAAcwB5AG0AYgBvAGwAPQAiAGYAIgAgAGkAZAA9ACIATABlAHQAQwBvAGwAdQBtAG4ATgBhAG0AZQAiAD4APABWAGEAcgBpAGEAYgBsAGUAIABzAHkAbQBiAG8AbAA9ACIAYwBvAGwAdQBtAG4ATgBhAG0AZQAiAD4APABMAGkAdABlAHIAYQBsAE4AbwBkAGUAIABzAHkAbQBiAG8AbAA9ACIAaQBkAHgAIgA+ADwAIQBbAEMARABBAFQAQQBbACIAUABhAHQAaAAiAF0AXQA+ADwALwBMAGkAdABlAHIAYQBsAE4AbwBkAGUAPgA8AC8AVgBhAHIAaQBhAGIAbABlAD4APABMAGUAdABOAG8AZABlACAAcwB5AG0AYgBvAGwAPQAiAGwAZQB0AE8AcAB0AGkAbwBuAHMAIgAgAGkAZAA9ACIATABlAHQAWAAiAD4APABWAGEAcgBpAGEAYgBsAGUAIABzAHkAbQBiAG8AbAA9ACIAeAAiAD4APABOAG8AbgB0AGUAcgBtAGkAbgBhAGwATgBvAGQAZQAgAHMAeQBtAGIAbwBsAD0AIgB2ACIAIAByAHUAbABlAD0AIgBDAGgAbwBvAHMAZQBJAG4AcAB1AHQAIgA+ADwAVgBhAHIAaQBhAGIAbABlAE4AbwBkAGUAIABzAHkAbQBiAG8AbAA9ACIAdgBzACIAIAAvAD4APABWAGEAcgBpAGEAYgBsAGUATgBvAGQAZQAgAHMAeQBtAGIAbwBsAD0AIgBjAG8AbAB1AG0AbgBOAGEAbQBlACIAIAAvAD4APAAvAE4AbwBuAHQAZQByAG0AaQBuAGEAbABOAG8AZABlAD4APAAvAFYAYQByAGkAYQBiAGwAZQA+ADwATgBvAG4AdABlAHIAbQBpAG4AYQBsAE4AbwBkAGUAIABzAHkAbQBiAG8AbAA9ACIAYwBvAG4AdgAiACAAcgB1AGwAZQA9ACIATABvAG8AawB1AHAAIgA+ADwAVgBhAHIAaQBhAGIAbABlAE4AbwBkAGUAIABzAHkAbQBiAG8AbAA9ACIAeAAiACAALwA+ADwATABpAHQAZQByAGEAbABOAG8AZABlACAAcwB5AG0AYgBvAGwAPQAiAGwAbwBvAGsAdQBwAEQAaQBjAHQAaQBvAG4AYQByAHkAIgA+ADwARABpAGMAdABpAG8AbgBhAHIAeQAgAHMAaQB6AGUAPQAiADEAIgA+ADwASQB0AGUAbQAgAGkAPQAiADAAIgA+ADwASwBlAHkAVgBhAGwAdQBlAFAAYQBpAHIAPgA8AEsAZQB5AD4APABTAG8AbQBlAD4APAAhAFsAQwBEAEEAVABBAFsAIgAvAFUAcwBlAHIAcwAvAGMAYwBlAGMAaQBsAC8ARABlAHMAawB0AG8AcAAvAHUAbgB0AGkAdABsAGUAZAAgAGYAbwBsAGQAZQByAC8AYwBsAGkAYwBrAEUAdgBlAG4AdABzAEYAcgBvAG0AUwBlAHMAcwBpAG8AbgBzAFcAaQB0AGgAbwB1AHQAUgB1AGwAZQBDAHIAZQBhAHQAaQBvAG4ALgBjAHMAdgAiAF0AXQA+ADwALwBTAG8AbQBlAD4APAAvAEsAZQB5AD4APABWAGEAbAB1AGUAPgA8ACEAWwBDAEQAQQBUAEEAWwAiADAAIgBdAF0APgA8AC8AVgBhAGwAdQBlAD4APAAvAEsAZQB5AFYAYQBsAHUAZQBQAGEAaQByAD4APAAvAEkAdABlAG0APgA8AC8ARABpAGMAdABpAG8AbgBhAHIAeQA+ADwALwBMAGkAdABlAHIAYQBsAE4AbwBkAGUAPgA8AC8ATgBvAG4AdABlAHIAbQBpAG4AYQBsAE4AbwBkAGUAPgA8AC8ATABlAHQATgBvAGQAZQA+ADwALwBMAGUAdABOAG8AZABlAD4APAAvAE4AbwBuAHQAZQByAG0AaQBuAGEAbABOAG8AZABlAD4APAAvAE4AbwBuAHQAZQByAG0AaQBuAGEAbABOAG8AZABlAD4APAAvAE4AbwBuAHQAZQByAG0AaQBuAGEAbABOAG8AZABlAD4A",
+            "examples": "{\"0\":{\"row\":0,\"sourceData\":{\"Path\":\"/Users/ccecil/Desktop/untitled folder/clickEventsFromSessionsWithoutRuleCreation.csv\"},\"example\":\"0\"}}",
+            "priorColumnIds": [
+              "Path"
+            ],
+            "sourceColumnIds": [
+              "Path"
+            ],
+            "outputType": 2,
+            "anchorColumnId": "Path"
+          }
+        },
+        {
+          "id": "e3bc1242-74c8-4189-9cb8-5129a0d06b2a",
+          "type": "Microsoft.DPrep.ReplaceMissingStringValuesBlock",
+          "arguments": {
+            "columnIds": [
+              "Column"
+            ],
+            "replaceWith": "1",
+            "useNullAsMissing": true,
+            "useEmptyStringAsMissing": true
+          }
+        },
+        {
+          "id": "5c2969a0-5552-432e-9fdf-01af0365e22f",
+          "type": "Microsoft.DPrep.ColumnRenameBlock",
+          "arguments": {
+            "newColumnId": "label",
+            "columnId": "Column"
+          }
+        },
+        {
+          "id": "c85d6bdc-5ee3-422e-9d5f-e00150daff57",
+          "type": "Microsoft.DPrep.AddCustomColumnBlock",
+          "arguments": {
+            "columnId": "client_events",
+            "priorColumnId": "client_event_timestamp",
+            "customExpression": "def newvalue(row):\n    dict = ['btn_ok', 'btn_close', 'btn_attachment_attachfrom', '102', 'btn_apply', 'btn_cancel', 'btn_comment_post', 'imgDesktopMagnify', 'btn_save', 'btn_findReplace_find_next']\n    if row.client_event_parm1_string in dict:\n        return row.client_event_object_name + \":\" + row.client_event_parm1_string;\n    else:\n        return row.client_event_object_name\n",
+            "codeBlockType": 1
+          }
+        },
+        {
+          "id": "0f526704-9ba1-4cde-a96e-73b6baed0ff6",
+          "type": "Microsoft.DPrep.CustomBlock",
+          "arguments": {
+            "customBlock": "\ndef transform(df):\n #   ohe = pd.get_dummies(df['client_events'])\n #   df = df.join(ohe)\n #   return df\n    df['ItemId'] = pd.factorize(df.client_events)[0]\n    return df",
+            "codeBlockType": 1
+          }
+        },
+        {
+          "id": "fa955009-38af-4025-ad5a-70ae4af2b31b",
+          "type": "Microsoft.DPrep.DeleteColumnBlock",
+          "arguments": {
+            "columnIds": [
+              "Path",
+              "client_event_object_name",
+              "client_event_parm1_string",
+              "user_account_type",
+              "user_data_source",
+              "user_session_type"
+            ]
+          }
+        },
+        {
+          "id": "8b49ec58-bf29-4232-8a1e-6e537436027d",
+          "type": "Microsoft.DPrep.DeleteColumnBlock",
+          "arguments": {
+            "columnIds": [
+              "user_locale"
+            ]
+          }
+        },
+        {
+          "id": "0aebb37f-b176-4159-8746-4f7b6c829490",
+          "type": "Microsoft.DPrep.ColumnRenameBlock",
+          "arguments": {
+            "newColumnId": "Time",
+            "columnId": "client_event_timestamp"
+          }
+        },
+        {
+          "id": "f108af6f-1232-41f4-8978-53e7d3c2b87a",
+          "type": "Microsoft.DPrep.ColumnRenameBlock",
+          "arguments": {
+            "newColumnId": "SessionId",
+            "columnId": "user_session_log_id"
+          }
+        },
+        {
+          "id": "e091ba1f-21d8-4d3f-a3db-f5183bd3c890",
+          "type": "Microsoft.DPrep.DeleteColumnBlock",
+          "arguments": {
+            "columnIds": [
+              "user_id",
+              "client_events",
+              "en_US"
+            ]
+          }
+        },
+        {
+          "id": "11b3515c-501a-47d5-b547-6505b0d0a0af",
+          "type": "Microsoft.DPrep.DeleteColumnBlock",
+          "arguments": {
+            "columnIds": [
+              "label"
+            ]
+          }
+        }
+      ],
+      "inspectors": [
+        {
+          "id": "c9dde2eb-f434-407a-8b72-3e421c764121",
+          "type": "Microsoft.DPrep.DataQualityInspector",
+          "arguments": {},
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "d7e0fd44-23a2-4c63-824d-ff30a8205aa0",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 1,
+              "referencedStepId": null,
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": false
+        }
+      ]
+    }
+  ],
+  "runConfigurations": []
+}
